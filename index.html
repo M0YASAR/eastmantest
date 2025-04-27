@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home - Eastman</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.scroll-up').forEach(el => {
+            observer.observe(el);
+        });
+    });
+</script>
+<body>
+
+    <header>
+        <div class="logo">
+             <a href="index.html">
+                <img src="images/logo-blue.png" alt="Eastman Logo">
+             </a>
+        </div>
+        <nav>
+            <ul class="headerLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="videos/eastman_background_video_compressed.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1 class="scroll-up">Welcome to Eastman</h1>
+            <p>Your Global Partner in Energy solutions</p>
+            <a href="about.html" class="cta-button">Learn More</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We specialize in cutting-edge technology and provide reliable solutions across industries.</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Eastman. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
